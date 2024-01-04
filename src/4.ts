@@ -14,7 +14,7 @@
 // house.comeIn(person);
 
 class Key {
-  constructor(private signature: string = self.crypto.randomUUID()) {}
+  private signature: string = self.crypto.randomUUID();
   getSignature(): string {
     return this.signature;
   }
@@ -37,7 +37,7 @@ abstract class House {
       this.tenants.push(person);
     }
   }
-  abstract openDoor(key: Key);
+  abstract openDoor(key: Key): void;
 }
 
 class MyHouse extends House {
